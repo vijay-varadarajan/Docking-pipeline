@@ -66,7 +66,7 @@ Contains functions to filter the docked results based on the specified criteria.
 
 ## Dependencies
 
-- Python 3.x
+- Python 3.11
 - RDKit
 - OpenBabel
 - Singularity

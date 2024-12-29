@@ -1,4 +1,4 @@
-# Docking Automation Project
+# Docking Automation Pipeline
 
 ## Introduction
 
@@ -74,10 +74,12 @@ https://github.com/Mys7erio/scientiflow-singularity/blob/main/install-singularit
 ### Python and OpenBabel containers installation using Singularity
 
 `singularity pull python.sif library://scientiflow/bioinformatics/python:3.12`
+
 `singularity pull openbabel.sif library://scientiflow/bioinformatics/openbabel:3.1.0`
+
 `singularity pull gnina.sif docker://gnina/gnina:latest`
 
 
 ## License
 
-This project is licensed under the MIT License."# Docking-pipeline" 
+This project is licensed under the MIT License.

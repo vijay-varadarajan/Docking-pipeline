@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project automates the process of docking ligands to proteins using various docking methods and scoring techniques. It reads input data from a CSV file, converts necessary files, performs docking, and filters the results based on specified criteria.
+This project automates the process of docking ligands to proteins using various docking methods and scoring techniques provided by GNINA. It reads input data from a CSV file, converts necessary files, performs docking, and filters the results based on specified criteria.
 
 ## Usage
 

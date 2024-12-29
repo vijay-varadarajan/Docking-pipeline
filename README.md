@@ -34,7 +34,7 @@ python main.py --csv_path ./csv/pairs.csv --cnn_scoring rescore --filter_type be
 1. **CSV Parsing**: The script reads the protein, ligand, and site information from the specified *CSV file*.
 2. **File Conversion**: Converts PDB files to SDF format using *Open Babel*.
 3. **Docking**: Performs docking using the specified CNN scoring method using *GNINA*.
-    - `none`: No CNN scoring is used. *(fastest)*
+    - `none`: No CNN scoring is used. *(fastest, traditional)*
     - `rescore`: Rescoring using CNN. *(fastest with CNN)*
     - `refinement`: Refinement using CNN. *(moderate speed)*
     - `metrorescore`: Metropolis Monte Carlo sampling followed by rescoring using CNN. *(moderate speed)*

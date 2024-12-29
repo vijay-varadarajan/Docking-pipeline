@@ -4,6 +4,7 @@
 
 This project automates the process of docking ligands to proteins using various docking methods and scoring techniques provided by GNINA. It reads input data from a CSV file, converts necessary files, performs docking, and filters the results based on specified criteria.
 
+
 ## Usage
 
 To run the docking automation script, use the following command:
@@ -30,10 +31,18 @@ python main.py --csv_path ./csv/pairs.csv --cnn_scoring rescore --filter_type be
 
 ## Working
 
-1. **CSV Parsing**: The script reads the protein, ligand, and site information from the specified CSV file.
-2. **File Conversion**: Converts PDB files to SDF format using Open Babel.
-3. **Docking**: Performs docking using the specified CNN scoring method.
+1. **CSV Parsing**: The script reads the protein, ligand, and site information from the specified *CSV file*.
+2. **File Conversion**: Converts PDB files to SDF format using *Open Babel*.
+3. **Docking**: Performs docking using the specified CNN scoring method using *GNINA*.
+    - `none`: No CNN scoring is used. *(fastest)*
+    - `rescore`: Rescoring using CNN. *(fastest with CNN)*
+    - `refinement`: Refinement using CNN. *(moderate speed)*
+    - `metrorescore`: Metropolis Monte Carlo sampling followed by rescoring using CNN. *(moderate speed)*
+    - `metrorefine`: Metropolis Monte Carlo sampling followed by refinement using CNN. *(moderate speed)*
+    - `all`: Ensemble of all CNN scoring methods are used. *(slowest)*
 4. **Filtering**: Filters the docked results based on the specified filter type.
+    - `all`: Retains all docked poses.
+    - `best`: Retains the best docked pose based on the CNN score.
 
 
 ## File Descriptions

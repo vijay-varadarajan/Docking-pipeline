@@ -36,10 +36,10 @@ python main.py --csv_path ./csv/pairs.csv --cnn_scoring rescore --filter_type be
 3. **Docking**: Performs docking using the specified CNN scoring method using *GNINA*.
     - `none`: No CNN scoring is used. *(fastest, traditional)*
     - `rescore`: Rescoring using CNN. *(fastest with CNN)*
-    - `refinement`: Refinement using CNN. *(moderate speed)*
-    - `metrorescore`: Metropolis Monte Carlo sampling followed by rescoring using CNN. *(moderate speed)*
-    - `metrorefine`: Metropolis Monte Carlo sampling followed by refinement using CNN. *(moderate speed)*
-    - `all`: Ensemble of all CNN scoring methods are used. *(slowest)*
+    - `refinement`: Refinement using CNN. *(moderate speed. 10x slower than rescore)*
+    - `metrorescore`: Metropolis Monte Carlo sampling followed by rescoring using CNN.
+    - `metrorefine`: Metropolis Monte Carlo sampling followed by refinement using CNN.
+    - `all`: Ensemble of all CNN scoring methods are used. *(slowest, extremely computationally intensive)*
 4. **Filtering**: Filters the docked results based on the specified filter type.
     - `all`: Retains all docked poses.
     - `best`: Retains the best docked pose based on the CNN score.

@@ -15,6 +15,8 @@ parser.add_argument('-s', '--cnn_scoring', type=str, choices=['none', 'rescore',
 parser.add_argument('-f', '--filter_type', type=str, choices=["all", "best"], required=True, help='Filter type: "all" or "best"')
 args = parser.parse_args()
 
+results = "results"
+
 # Read the protein, ligand, site from the csv file
 with open(args.csv_path) as f:
     reader = csv.reader(f)
@@ -38,9 +40,17 @@ with open(args.csv_path) as f:
         cnn_scoring = args.cnn_scoring
         filter_type = args.filter_type
 
-        os.system(f"mkdir -p results/{i}")
-        docking(cnn_scoring, f"{ligand}", f"{site}", f"{protein}", f"results/{i}/cnn_{cnn_scoring}_docked.sdf.gz")
+        os.system(f"mkdir -p {results}/{i}")
+        docking(cnn_scoring, f"{ligand}", f"{site}", f"{protein}", f"{results}/{i}/cnn_{cnn_scoring}_docked.sdf.gz")
         
-        os.system(f"gunzip results/{i}/cnn_{cnn_scoring}_docked.sdf.gz")
+        os.system(f"gunzip {results}/{i}/cnn_{cnn_scoring}_docked.sdf.gz")
         
-        filter_docked(filter_type, f"results/{i}/cnn_{cnn_scoring}_docked.sdf", f"results/{i}/cnn_{cnn_scoring}_docked_best.sdf")
+        filter_docked(filter_type, f"{results}/{i}/cnn_{cnn_scoring}_docked.sdf", f"{results}/{i}/cnn_{cnn_scoring}_docked_best.sdf")
+
+        if filter_type == "best":
+            sdf_to_pdb(f"{results}/{i}/cnn_{cnn_scoring}_docked_best.sdf")
+        else:
+            os.system(f"mkdir -p {results}/{i}/all")
+            for j in range(9):
+                sdf_to_pdb(f"{results}/{i}/cnn_{cnn_scoring}_docked__{j}.sdf")
+                os.system(f"mv {results}/{i}/cnn_{cnn_scoring}_docked__{j}.pdb {results}/{i}/all")

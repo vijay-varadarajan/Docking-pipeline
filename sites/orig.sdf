@@ -1,0 +1,240 @@
+sites/orig.pdb
+ OpenBabel12292411103D
+
+ 63 66  0  0  1  0  0  0  0  0999 V2000
+    3.0230    4.4940   -6.3670 O   0  0  0  0  0  0  0  0  0  0  0  0
+    2.2070    3.7320   -9.7520 O   0  0  0  0  0  0  0  0  0  0  0  0
+    3.5370    3.1040   -4.0100 O   0  0  0  0  0  0  0  0  0  0  0  0
+    4.0220    1.1700  -10.0540 O   0  0  0  0  0  0  0  0  0  0  0  0
+    0.8610   -5.5800   -5.8310 O   0  0  0  0  0  0  0  0  0  0  0  0
+    2.6890    6.3080   -7.9090 N   0  0  0  0  0  0  0  0  0  0  0  0
+    2.6800    1.4590   -8.2790 N   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3700    8.3910   -7.7380 N   0  0  0  0  0  0  0  0  0  0  0  0
+    1.8250    6.5170  -10.2380 N   0  0  0  0  0  0  0  0  0  0  0  0
+    3.0120   -1.8170   -9.7590 N   0  0  0  0  0  0  0  0  0  0  0  0
+    3.0360   10.4360  -10.0940 N   0  0  0  0  0  0  0  0  0  0  0  0
+    2.0660    8.6190  -11.2160 N   0  0  0  0  0  0  0  0  0  0  0  0
+    3.3880    2.6440   -7.7960 C   0  0  1  0  0  0  0  0  0  0  0  0
+    3.0820    3.9240   -8.6280 C   0  0  2  0  0  0  0  0  0  0  0  0
+    2.9520    3.0480   -6.3680 C   0  0  1  0  0  0  0  0  0  0  0  0
+    2.4320    4.8900   -7.6170 C   0  0  1  0  0  0  0  0  0  0  0  0
+    3.8430    2.4660   -5.2510 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.3950    6.9400   -9.0990 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.0900    0.7640   -9.3840 C   0  0  0  0  0  0  0  0  0  0  0  0
+    3.2980    7.2360   -7.0910 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.2490   -0.5240   -9.7080 C   0  0  2  0  0  0  0  0  0  0  0  0
+    2.8290    8.2480   -8.9980 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.0670   -0.6370   -8.7170 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.6400    9.0980  -10.1100 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.0720   -1.9670   -7.9660 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.6610    7.3440  -11.2830 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.5040   -2.0080   -6.6300 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5850   -3.1350   -8.5770 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.4660   10.8330  -10.1380 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.0360   11.5280  -10.0140 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.4530   -3.2110   -5.9080 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.5220   -4.3340   -7.8470 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.9570   -4.3830   -6.5130 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.4600   -6.8020   -6.4760 C   0  0  0  0  0  0  0  0  0  0  0  0
+    4.3310    2.3190   -7.8710 H   0  0  0  0  0  0  0  0  0  0  0  0
+    3.8930    4.2600   -9.1060 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.0230    2.7430   -6.1620 H   0  0  0  0  0  0  0  0  0  0  0  0
+    1.4340    4.8520   -7.5810 H   0  0  0  0  0  0  0  0  0  0  0  0
+    1.8760    1.1350   -7.7580 H   0  0  0  0  0  0  0  0  0  0  0  0
+    3.6820    1.4860   -5.1390 H   0  0  0  0  0  0  0  0  0  0  0  0
+    4.8110    2.6260   -5.4460 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.7800    3.4400  -10.5000 H   0  0  0  0  0  0  0  0  0  0  0  0
+    3.6290    7.0670   -6.1630 H   0  0  0  0  0  0  0  0  0  0  0  0
+    1.9330   -0.4360  -10.6530 H   0  0  0  0  0  0  0  0  0  0  0  0
+    3.8040    2.4600   -3.3280 H   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1290    0.1040   -8.0490 H   0  0  0  0  0  0  0  0  0  0  0  0
+    0.2080   -0.5610   -9.2220 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.5750   -2.4670  -10.4110 H   0  0  0  0  0  0  0  0  0  0  0  0
+    3.9640   -1.6510  -10.0840 H   0  0  0  0  0  0  0  0  0  0  0  0
+    1.2320    7.0040  -12.1200 H   0  0  0  0  0  0  0  0  0  0  0  0
+    1.8490   -1.1780   -6.1920 H   0  0  0  0  0  0  0  0  0  0  0  0
+    0.2840   -3.1130   -9.5310 H   0  0  0  0  0  0  0  0  0  0  0  0
+    5.0590   10.0300  -10.1910 H   0  0  0  0  0  0  0  0  0  0  0  0
+    4.7190   11.3490   -9.3190 H   0  0  0  0  0  0  0  0  0  0  0  0
+    4.6540   11.4080  -10.9340 H   0  0  0  0  0  0  0  0  0  0  0  0
+    1.1060   11.1610   -9.9900 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.1060   12.1370  -10.8040 H   0  0  0  0  0  0  0  0  0  0  0  0
+    2.1710   12.0770   -9.1890 H   0  0  0  0  0  0  0  0  0  0  0  0
+    1.7700   -3.2360   -4.9600 H   0  0  0  0  0  0  0  0  0  0  0  0
+    0.1630   -5.1600   -8.2820 H   0  0  0  0  0  0  0  0  0  0  0  0
+    0.4480   -7.5620   -5.8270 H   0  0  0  0  0  0  0  0  0  0  0  0
+    1.0890   -7.0390   -7.2160 H   0  0  0  0  0  0  0  0  0  0  0  0
+   -0.4570   -6.7160   -6.8660 H   0  0  0  0  0  0  0  0  0  0  0  0
+  1 16  1  0  0  0  0
+  1 15  1  0  0  0  0
+  2 14  1  0  0  0  0
+  2 42  1  0  0  0  0
+  3 17  1  0  0  0  0
+  3 45  1  0  0  0  0
+  4 19  2  0  0  0  0
+  5 34  1  0  0  0  0
+  5 33  1  0  0  0  0
+  6 16  1  0  0  0  0
+  6 18  1  0  0  0  0
+  6 20  1  0  0  0  0
+  7 13  1  0  0  0  0
+  7 19  1  0  0  0  0
+  7 39  1  0  0  0  0
+  8 22  1  0  0  0  0
+  8 20  2  0  0  0  0
+  9 18  1  0  0  0  0
+  9 26  2  0  0  0  0
+ 10 21  1  0  0  0  0
+ 10 49  1  0  0  0  0
+ 10 48  1  0  0  0  0
+ 11 24  1  0  0  0  0
+ 11 30  1  0  0  0  0
+ 11 29  1  0  0  0  0
+ 12 24  2  0  0  0  0
+ 12 26  1  0  0  0  0
+ 13 15  1  0  0  0  0
+ 13 14  1  0  0  0  0
+ 13 35  1  6  0  0  0
+ 14 16  1  0  0  0  0
+ 14 36  1  6  0  0  0
+ 15 17  1  0  0  0  0
+ 15 37  1  1  0  0  0
+ 16 38  1  1  0  0  0
+ 17 40  1  0  0  0  0
+ 17 41  1  0  0  0  0
+ 18 22  2  0  0  0  0
+ 19 21  1  0  0  0  0
+ 20 43  1  0  0  0  0
+ 21 23  1  0  0  0  0
+ 21 44  1  6  0  0  0
+ 22 24  1  0  0  0  0
+ 23 25  1  0  0  0  0
+ 23 47  1  0  0  0  0
+ 23 46  1  0  0  0  0
+ 25 27  2  0  0  0  0
+ 25 28  1  0  0  0  0
+ 26 50  1  0  0  0  0
+ 27 31  1  0  0  0  0
+ 27 51  1  0  0  0  0
+ 28 52  1  0  0  0  0
+ 28 32  2  0  0  0  0
+ 29 53  1  0  0  0  0
+ 29 54  1  0  0  0  0
+ 29 55  1  0  0  0  0
+ 30 56  1  0  0  0  0
+ 30 58  1  0  0  0  0
+ 30 57  1  0  0  0  0
+ 31 33  2  0  0  0  0
+ 31 59  1  0  0  0  0
+ 32 33  1  0  0  0  0
+ 32 60  1  0  0  0  0
+ 34 63  1  0  0  0  0
+ 34 62  1  0  0  0  0
+ 34 61  1  0  0  0  0
+M  END
+>  <REMARK>
+YASARA *************************************************************
+YASARA *                                                           *
+YASARA *                     Y  A  S  A  R  A                      *
+YASARA *                                                           *
+YASARA *   Yet Another Scientific Artificial Reality Application   *
+YASARA *                                                           *
+YASARA *            MOLECULE STRUCTURE FILE, PDB FORMAT            *
+YASARA *                                                           *
+YASARA * Just use YASARA every day to make your questions go away! *
+YASARA *                                                           *
+YASARA *                      www.YASARA.org                       *
+YASARA *                                                           *
+YASARA *************************************************************
+YASARA
+YASARA Written on:        Wed Nov 13 16:13:53 2024
+YASARA Number of models: 1
+YASARA Number of atoms:   5222
+YASARA Please address questions or suggestions to: Eliza@yasara.org
+YASARA
+2 RESOLUTION. 3.51 ANGSTROMS.
+290 CRYSTALLOGRAPHIC SYMMETRY TRANSFORMATIONS
+290 THE FOLLOWING TRANSFORMATIONS OPERATE ON THE ATOM/HETATM
+290 RECORDS IN THIS ENTRY TO PRODUCE CRYSTALLOGRAPHICALLY
+290 RELATED MOLECULES.
+290   SMTRY1   1  1.000000  0.000000  0.000000        0.00000
+290   SMTRY2   1  0.000000  1.000000  0.000000        0.00000
+290   SMTRY3   1  0.000000  0.000000  1.000000        0.00000
+290   SMTRY1   2 -1.000000  0.000000  0.000000        0.00000
+290   SMTRY2   2  0.000000 -1.000000  0.000000        0.00000
+290   SMTRY3   2  0.000000  0.000000  1.000000      159.77500
+290   SMTRY1   3  0.000000 -1.000000  0.000000       59.44500
+290   SMTRY2   3  1.000000  0.000000  0.000000       59.44500
+290   SMTRY3   3  0.000000  0.000000  1.000000       79.88750
+290   SMTRY1   4  0.000000  1.000000  0.000000       59.44500
+290   SMTRY2   4 -1.000000  0.000000  0.000000       59.44500
+290   SMTRY3   4  0.000000  0.000000  1.000000      239.66250
+290   SMTRY1   5 -1.000000  0.000000  0.000000       59.44500
+290   SMTRY2   5  0.000000  1.000000  0.000000       59.44500
+290   SMTRY3   5  0.000000  0.000000 -1.000000       79.88750
+290   SMTRY1   6  1.000000  0.000000  0.000000       59.44500
+290   SMTRY2   6  0.000000 -1.000000  0.000000       59.44500
+290   SMTRY3   6  0.000000  0.000000 -1.000000      239.66250
+290   SMTRY1   7  0.000000  1.000000  0.000000        0.00000
+290   SMTRY2   7  1.000000  0.000000  0.000000        0.00000
+290   SMTRY3   7  0.000000  0.000000 -1.000000        0.00000
+290   SMTRY1   8  0.000000 -1.000000  0.000000        0.00000
+290   SMTRY2   8 -1.000000  0.000000  0.000000        0.00000
+290   SMTRY3   8  0.000000  0.000000 -1.000000      159.77500
+
+>  <SEQRES>
+1 A  332  MET GLN PRO GLU THR GLN SER SER ALA LEU PRO ALA TYR
+2 A  332  ARG PHE SER ILE ALA PRO MET LEU ASP TRP THR ASP ARG
+3 A  332  HIS CYS ARG TYR PHE LEU ARG LEU LEU SER ARG GLN THR
+4 A  332  LEU LEU TYR THR GLU MET VAL THR THR GLY ALA ILE ILE
+5 A  332  HIS GLY LYS GLY ASP TYR LEU ALA TYR SER GLU GLU GLU
+6 A  332  HIS PRO VAL ALA LEU GLN LEU GLY GLY SER ASP PRO ALA
+7 A  332  GLN LEU ALA HIS CYS ALA LYS LEU ALA GLU ALA ARG GLY
+8 A  332  TYR ASP GLU ILE ASN LEU ASN VAL GLY CYS PRO SER ASP
+9 A  332  ARG VAL GLN ASN GLY MET PHE GLY ALA CYS LEU MET GLY
+10 A  332  ASN ALA GLN LEU VAL ALA ASP CYS VAL LYS ALA MET ARG
+11 A  332  ASP VAL VAL SER ILE PRO VAL THR VAL LYS THR ARG ILE
+12 A  332  GLY ILE ASP ASP GLN ASP SER TYR ALA PHE LEU CYS ASP
+13 A  332  PHE ILE ASN THR VAL SER GLY GLN GLY GLU CYS GLU MET
+14 A  332  PHE ILE ILE HIS ALA ARG LYS ALA TRP LEU SER GLY LEU
+15 A  332  SER PRO LYS GLU ASN ARG GLU ILE PRO PRO LEU ASP TYR
+16 A  332  PRO ARG VAL TYR GLN LEU LYS ARG ASP PHE PRO HIS LEU
+17 A  332  THR MET SER ILE ASN GLY GLY ILE LYS SER LEU GLU GLU
+18 A  332  ALA LYS GLU HIS LEU ARG HIS MET ASP GLY VAL MET VAL
+19 A  332  GLY ARG GLU ALA TYR GLN ASN PRO GLY ILE LEU ALA ALA
+20 A  332  VAL ASP ARG GLU ILE PHE GLY ALA ASP THR THR ASP THR
+21 A  332  ASP PRO VAL ALA VAL VAL ARG ALA MET TYR PRO TYR ILE
+22 A  332  GLU ARG GLU LEU SER GLN GLY ALA TYR LEU GLY HIS ILE
+23 A  332  THR ARG HIS MET LEU GLY LEU PHE GLN GLY ILE PRO GLY
+24 A  332  ALA ARG GLN TRP ARG ARG TYR LEU SER GLU ASN ALA HIS
+25 A  332  LYS ALA GLY ALA ASP ALA ALA VAL LEU GLU GLN ALA LEU
+26 A  332  LYS LEU ILE ALA ASP LYS ARG
+
+>  <ORIGX1>
+1.000000  0.000000  0.000000        0.00000
+
+>  <ORIGX2>
+0.000000  1.000000  0.000000        0.00000
+
+>  <ORIGX3>
+0.000000  0.000000  1.000000        0.00000
+
+>  <SCALE1>
+0.008411  0.000000  0.000000        0.00000
+
+>  <SCALE2>
+0.000000  0.008411  0.000000        0.00000
+
+>  <SCALE3>
+0.000000  0.000000  0.003129        0.00000
+
+>  <COMPND>
+    autobox_ligand/ligand_only_clean.pdb 
+
+>  <AUTHOR>
+    GENERATED BY OPEN BABEL 3.1.0
+
+>  <MASTER>
+        0    0    0    0    0    0    0    0   63    0   63    0
+
+$$$$

@@ -2,75 +2,100 @@
 
 ## Introduction
 
-This project automates the process of docking ligands to proteins using various docking methods and scoring techniques provided by GNINA. It reads input data from a CSV file, converts necessary files, performs docking, and filters the results based on specified criteria.
+This project automates the process of docking ligands to proteins using various docking methods and scoring techniques provided by GNINA. It reads input data from a CSV file, converts necessary files, performs docking, and filters the results based on specified criteria, as explained below.
 
 
 ## Usage
 
+Upload the input CSV file (`pairs.csv`) containing protein, ligand, and site information to the **csv/** directory. The CSV file should have the following columns:
+
+- `protein`: Path to the protein PDB file.
+- `ligand`: Path to the ligand PDB file.
+- `site`: Path to the site PDB file.
+
+Upload the required protein, ligand, and site PDB files to the **proteins/** , **ligands/** , and **sites/** directories, respectively.
+
 To run the docking automation script, use the following command:
 
 ```bash
-python main.py --csv_path <csv_path> --cnn_scoring <scoring_type> --filter_type <filter_type>
+./main.sh
 ```
-
-### Command Line Arguments
-
-- `--csv_path` (required): Path to the CSV file containing the protein, ligand, and site information.
-- `--cnn_scoring` (required): CNN scoring method. Choices are `none`, `rescore`, `refinement`, `metrorescore`, `metrorefine`, `all`. Default is `rescore`.
-- `--filter_type` (required): Filter type. Choices are `all` or `best`.
-
-
-## Example
-
-Here is an example command to run the script:
-
-```bash
-python main.py --csv_path ./csv/pairs.csv --cnn_scoring rescore --filter_type best
-```
-
 
 ## Working
 
-1. **CSV Parsing**: The script reads the protein, ligand, and site information from the specified *CSV file*.
-2. **File Conversion**: Converts PDB files to SDF format using *Open Babel*.
-3. **Docking**: Performs docking using the specified CNN scoring method using *GNINA*.
+1. 
+```bash
+singularity exec containers/openbabel-3.1.0.sif ./convert_format.sh
+```
+**CSV Parsing and File Conversion**: The script reads the protein, ligand, and site information from the specified *CSV file*. It then converts PDB files to SDF format using *Open Babel*.
+
+2. 
+```bash
+singularity exec containers/gnina-1.0.sif ./gnina_docking.sh <docking_method>
+```
+**Docking**: Performs docking using the specified CNN scoring method using *GNINA*.
     - `none`: No CNN scoring is used. *(fastest, traditional)*
     - `rescore`: Rescoring using CNN. *(fastest with CNN)*
     - `refinement`: Refinement using CNN. *(moderate speed. 10x slower than rescore)*
     - `metrorescore`: Metropolis Monte Carlo sampling followed by rescoring using CNN.
     - `metrorefine`: Metropolis Monte Carlo sampling followed by refinement using CNN.
     - `all`: Ensemble of all CNN scoring methods are used. *(slowest, extremely computationally intensive)*
-4. **Filtering**: Filters the docked results based on the specified filter type.
+
+3. 
+```bash
+singularity exec containers/python-3.12.sif ./unzip.sh
+```
+**Unzipping**: Unzips the docked results and stores them in the same directory.
+
+4.
+```bash
+singularity exec containers/python-3.12.sif filter_docked.py --filter_type <filter_type>
+```
+**Filtering**: Filters the docked results based on the specified filter type.
     - `all`: Retains all docked poses.
     - `best`: Retains the best docked pose based on the CNN score.
+
+5.
+```bash
+singularity exec containers/openbabel-3.1.0.sif ./sdf_to_pdb.sh
+```
+**SDF to PDB Conversion**: Converts the filtered SDF files to PDB format using *Open Babel*.
 
 
 ## File Descriptions
 
-### main.py
+### main.sh
 
 The main script that orchestrates the entire process. It reads input data, converts files, performs docking, and filters results.
 
-### pdb_to_sdf.py
+### convert_format.sh
 
 Contains the function to convert PDB files to SDF format using Open Babel.
 
-### docking.py
+### gnina_docking.sh
 
-Contains functions to perform traditional docking, CNN scoring docking, and whole protein docking.
+Contains functions to perform traditional docking and CNN scoring docking.
 
-### filter_docked.py
+### unzip.sh
+
+Contains functions to unzip the docked results.
+
+### filter_docked.sh
 
 Contains functions to filter the docked results based on the specified criteria.
+
+### sdf_to_pdb.sh
+
+Contains functions to convert SDF files to PDB format using Open Babel.
 
 
 ## Dependencies
 
 - Python 3.11
 - RDKit
-- OpenBabel
 - Singularity
-- Gnina
+- Open Babel
+- GNINA
 
 
 ## SETUP 
@@ -82,11 +107,11 @@ https://github.com/Mys7erio/scientiflow-singularity/blob/main/install-singularit
 
 ### Python and OpenBabel containers installation using Singularity
 
-`singularity pull python.sif library://scientiflow/bioinformatics/python:3.12`
+`singularity pull containers/python-3.12.sif library://scientiflow/bioinformatics/python:3.12`
 
-`singularity pull openbabel.sif library://scientiflow/bioinformatics/openbabel:3.1.0`
+`singularity pull containers/openbabel-3.1.0.sif library://scientiflow/bioinformatics/openbabel:3.1.0`
 
-`singularity pull gnina.sif docker://gnina/gnina:latest`
+`singularity pull containers/gnina-1.0.sif docker://gnina/gnina:latest`
 
 
 ## License

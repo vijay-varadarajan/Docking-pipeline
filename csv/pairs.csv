@@ -1,2 +1,3 @@
-Protein, Ligand, Site
-rec.pdb, lig.pdb, orig.pdb
+Ligand, Protein, Site
+lig.pdb,rec.pdb,orig.pdb
+bent_ligand.pdb,rec.pdb,orig.pdb

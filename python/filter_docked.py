@@ -1,7 +1,7 @@
 import os
+import sys
+import argparse
 from rdkit import Chem
-
-cnn_scoring = "rescore"
 
 def extract_first_conformation(input_sdf, output_sdf):
     suppl = Chem.SDMolSupplier(input_sdf)
@@ -52,5 +52,11 @@ def filter_docked(arg, input_file, output_file):
         
         
 if __name__ == "__main__":
-    filter_docked("all", "results/0/cnn_rescore_docked.sdf", "results/0/cnn_rescore_docked_best.sdf")
+    parser = argparse.ArgumentParser(description='Filter docked conformations.')
+    parser.add_argument('--filter_type', required=True, choices=['all', 'best'], help='Type of filtering to apply')
+    parser.add_argument('-i', '--input', required=True, help='Input SDF file')
+    parser.add_argument('-o', '--output', required=True, help='Output SDF file')
     
+    args = parser.parse_args()
+    
+    filter_docked(args.filter_type, args.input, args.output)

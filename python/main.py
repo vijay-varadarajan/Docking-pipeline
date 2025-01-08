@@ -1,5 +1,5 @@
 from python.docking import traditional_docking, docking, whole_protein_docking
-from python.filter_docked import filter_docked
+from filter_docked import filter_docked
 from python.convert_2d_to_3d import convert_2d_to_3d
 from python.pdb_to_sdf import pdb_to_sdf
 from python.sdf_to_pdb import sdf_to_pdb

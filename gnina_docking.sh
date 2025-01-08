@@ -25,7 +25,8 @@ for i in "${!csv_lines[@]}"; do
     receptor_file=proteins/$receptor_file
     autobox_file=sites/${autobox_file%.*}.sdf
 
-    output_file="output/$(basename $ligand_file .sdf)_$(basename $receptor_file .pdb).sdf.gz"
+    mkdir -p output
+    output_file="output/$(basename $ligand_file .sdf)_$(basename $receptor_file .pdb)_$(basename $autobox_file .sdf).sdf.gz"
     
     echo "Executing iteration $((i+1))..."
     

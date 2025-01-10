@@ -4,7 +4,6 @@
 
 This project automates the process of docking ligands to proteins using various docking methods and scoring techniques provided by GNINA. It reads input data from a CSV file, converts necessary files, performs docking, and filters the results based on specified criteria, as explained below.
 
-
 ## Usage
 
 Upload the input CSV file (`pairs.csv`) containing protein, ligand, and site information to the **csv/** directory. The CSV file should have the following columns:
@@ -23,16 +22,12 @@ To run the docking automation script, use the following command:
 
 ## Working
 
-1. 
-```bash
-singularity exec containers/openbabel-3.1.0.sif ./convert_format.sh
-```
+1. `singularity exec containers/openbabel-3.1.0.sif ./convert_format.sh`
+
 **CSV Parsing and File Conversion**: The script reads the protein, ligand, and site information from the specified *CSV file*. It then converts PDB files to SDF format using *Open Babel*.
 
-2. 
-```bash
-singularity exec containers/gnina-1.0.sif ./gnina_docking.sh <docking_method>
-```
+2. `singularity exec containers/gnina-1.0.sif ./gnina_docking.sh <docking_method>`
+
 **Docking**: Performs docking using the specified CNN scoring method using *GNINA*.
     - `none`: No CNN scoring is used. *(fastest, traditional)*
     - `rescore`: Rescoring using CNN. *(fastest with CNN)*
@@ -41,53 +36,69 @@ singularity exec containers/gnina-1.0.sif ./gnina_docking.sh <docking_method>
     - `metrorefine`: Metropolis Monte Carlo sampling followed by refinement using CNN.
     - `all`: Ensemble of all CNN scoring methods are used. *(slowest, extremely computationally intensive)*
 
-3. 
-```bash
-singularity exec containers/python-3.12.sif ./unzip.sh
-```
+3. `singularity exec containers/python-3.12.sif ./unzip.sh`
+
 **Unzipping**: Unzips the docked results and stores them in the same directory.
 
-4.
-```bash
-singularity exec containers/python-3.12.sif filter_docked.py --filter_type <filter_type>
-```
+4. `singularity exec containers/python-3.12.sif filter_docked.py --filter_type <filter_type>`
+
 **Filtering**: Filters the docked results based on the specified filter type.
     - `all`: Retains all docked poses.
     - `best`: Retains the best docked pose based on the CNN score.
 
-5.
-```bash
-singularity exec containers/openbabel-3.1.0.sif ./sdf_to_pdb.sh
-```
+5. `singularity exec containers/openbabel-3.1.0.sif ./sdf_to_pdb.sh`
+
 **SDF to PDB Conversion**: Converts the filtered SDF files to PDB format using *Open Babel*.
 
+6. ` singularity exec containers/python-3.12.sif python combine_ligand_protein.py`
+
+**Combining Ligand and Protein**: Combines the best ligand conformation and given protein PDB files to generate a single PDB file.
+
+7. `singularity exec containers/plip.sif ./plip_processing.sh`
+
+**PLIP Processing**: Processes the combined PDB file using *PLIP* to identify interactions between the protein and ligand.
+
+8. `singularity exec containers/python-3.12.sif python xml_processing.py`
+
+**XML Processing**: Extracts the interactions from the PLIP XML file and generates a CSV file containing the interactions.
 
 ## File Descriptions
 
-### main.sh
+#### main.sh
 
 The main script that orchestrates the entire process. It reads input data, converts files, performs docking, and filters results.
 
-### convert_format.sh
+#### convert_format.sh
 
 Contains the function to convert PDB files to SDF format using Open Babel.
 
-### gnina_docking.sh
+#### gnina_docking.sh
 
 Contains functions to perform traditional docking and CNN scoring docking.
 
-### unzip.sh
+#### unzip.sh
 
 Contains functions to unzip the docked results.
 
-### filter_docked.sh
+#### filter_docked.sh
 
 Contains functions to filter the docked results based on the specified criteria.
 
-### sdf_to_pdb.sh
+#### sdf_to_pdb.sh
 
 Contains functions to convert SDF files to PDB format using Open Babel.
 
+#### combine_ligand_protein.py
+
+Contains functions to combine the best ligand conformation and protein PDB files.
+
+#### plip_processing.sh
+
+Contains functions to process the combined PDB file using PLIP.
+
+#### xml_processing.py
+
+Contains functions to extract interactions from the PLIP XML file and generate a CSV file.
 
 ## Dependencies
 
@@ -97,8 +108,7 @@ Contains functions to convert SDF files to PDB format using Open Babel.
 - Open Babel
 - GNINA
 
-
-## SETUP 
+## SETUP
 
 ### Singularity installation
 
@@ -112,7 +122,6 @@ https://github.com/Mys7erio/scientiflow-singularity/blob/main/install-singularit
 `singularity pull containers/openbabel-3.1.0.sif library://scientiflow/bioinformatics/openbabel:3.1.0`
 
 `singularity pull containers/gnina-1.0.sif docker://gnina/gnina:latest`
-
 
 ## License
 

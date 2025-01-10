@@ -12,14 +12,16 @@ def process_xml_files():
     xml_files = []
     
     for fold in os.listdir(folder):
-        xml_files += [os.path.join(f"{folder}/{fold}", file) for file in os.listdir(os.path.join(folder, fold)) if file.endswith(".xml")]
-        if not xml_files:
-            print("No XML files found in the specified folder.")
-            return
+        fold_path = os.path.join(folder, fold)
+        if os.path.isdir(fold_path):
+            xml_files += [os.path.join(fold_path, file) for file in os.listdir(fold_path) if file.endswith(".xml")]
+    if not xml_files:
+        print("No XML files found in the specified folder.")
+        return
     
-        # Initialize variables
-        interactions_categories = set()
-        data = []
+    # Initialize variables
+    interactions_categories = set()
+    data = []
 
     # Process each XML file
     for file in xml_files:

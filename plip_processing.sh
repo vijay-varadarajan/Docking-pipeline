@@ -3,7 +3,7 @@ for folder in output/*/; do
     for pdb_file in "$folder"combined_*.pdb; do
         if [ -f "$pdb_file" ]; then
             # Execute the plip command with the found pdb file
-            singularity exec plip.sif plip -f "$pdb_file" -x
+            plip -f "$pdb_file" -x
             
             # Rename the generated report.xml to report_filename.xml
             base_name=$(basename "$pdb_file" .pdb)

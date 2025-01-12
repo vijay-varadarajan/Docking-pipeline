@@ -1,15 +1,15 @@
-singularity exec containers/openbabel-3.1.0.sif ./convert_format.sh
+singularity exec containers/openbabel-3.1.0.sif ./docking_process.sh convert csv/pairs.csv
 
-singularity exec containers/gnina-1.0.sif ./gnina_docking.sh none
+singularity exec containers/gnina-1.0.sif ./docking_process.sh gnina none csv/pairs.csv
 
-singularity exec containers/python-3.12.sif ./unzip.sh
+singularity exec containers/python-3.12.sif ./docking_process.sh unzip 
 
-singularity exec containers/python-3.12.sif python filter_docked.py --filter_type best
+singularity exec containers/python-3.12.sif python docking_process.py --mode filter --filter_type best
 
-singularity exec containers/openbabel-3.1.0.sif ./sdf_to_pdb.sh
+singularity exec containers/openbabel-3.1.0.sif ./docking_process.sh sdftopdb
 
-singularity exec containers/python-3.12.sif python combine_ligand_protein.py
+singularity exec containers/python-3.12.sif python docking_process.py --mode combine --filter_type best --csv_file csv/pairs.csv
 
-singularity exec containers/plip-1.0.sif ./plip_processing.sh
+singularity exec containers/plip-1.0.sif ./docking_process.sh plip
 
-singularity exec containers/python-3.12.sif python xml_processing.py
+singularity exec containers/python-3.12.sif python docking_process.py --mode report 

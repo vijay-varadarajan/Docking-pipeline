@@ -62,44 +62,6 @@ To run the docking automation script, use the following command:
 
 * **XML Processing**: Extracts the interactions from the PLIP XML file and generates a CSV file containing the interactions.
 
-## File Descriptions
-
-#### main.sh
-
-The main script that orchestrates the entire process. It reads input data, converts files, performs docking, and filters results.
-
-#### convert_format.sh
-
-Contains the function to convert PDB files to SDF format using Open Babel.
-
-#### gnina_docking.sh
-
-Contains functions to perform traditional docking and CNN scoring docking.
-
-#### unzip.sh
-
-Contains functions to unzip the docked results.
-
-#### filter_docked.sh
-
-Contains functions to filter the docked results based on the specified criteria.
-
-#### sdf_to_pdb.sh
-
-Contains functions to convert SDF files to PDB format using Open Babel.
-
-#### combine_ligand_protein.py
-
-Contains functions to combine the best ligand conformation and protein PDB files.
-
-#### plip_processing.sh
-
-Contains functions to process the combined PDB file using PLIP.
-
-#### xml_processing.py
-
-Contains functions to extract interactions from the PLIP XML file and generate a CSV file.
-
 ## Dependencies
 
 - Python 3.11
@@ -107,6 +69,7 @@ Contains functions to extract interactions from the PLIP XML file and generate a
 - Singularity
 - Open Babel
 - GNINA
+- PLIP
 
 ## SETUP
 
@@ -122,6 +85,8 @@ https://github.com/Mys7erio/scientiflow-singularity/blob/main/install-singularit
 `singularity pull containers/openbabel-3.1.0.sif library://scientiflow/bioinformatics/openbabel:3.1.0`
 
 `singularity pull containers/gnina-1.0.sif docker://gnina/gnina:latest`
+
+`singularity pull plip.sif library://scientiflow/bioinformatics/plip:1.0`
 
 ## License
 

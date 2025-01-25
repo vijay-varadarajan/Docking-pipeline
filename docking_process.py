@@ -143,6 +143,8 @@ def process_xml_files():
                 row.append(interaction_counts.get(category, 0))
             writer.writerow(row)
             ind += 1
+            
+    os.remove("output/scores.csv")
 
     # Plotting
     # category_colors = plt.get_cmap("tab10", len(interactions_categories))

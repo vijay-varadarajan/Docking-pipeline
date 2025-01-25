@@ -1,4 +1,4 @@
-singularity exec containers/gnina-1.0.sif ./docking_process.sh --mode gnina --cnn_scoring rescore --input_file csv/pairs.csv --exhaustiveness 8 --num_modes 9 --blind 0
+singularity exec containers/gnina-1.0.sif ./docking_process.sh --mode gnina --cnn_scoring none --input_file csv/pairs.csv --exhaustiveness 8 --num_modes 9 --blind 1
 
 singularity exec containers/python-3.12.sif ./docking_process.sh --mode unzip 
 

@@ -103,12 +103,6 @@ def process_xml_files():
             affinities.append(row[3])
             CNNscores.append(row[4])
         csvfile.close()
-        
-    print(ligands)
-    print(proteins)
-    print(conformations)
-    print(affinities)
-    print(CNNscores)
     
     # Initialize variables
     interactions_categories = set()

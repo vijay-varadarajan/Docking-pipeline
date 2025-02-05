@@ -30,17 +30,22 @@ gnina_docking() {
 
     mapfile -t csv_lines < <(tail -n +2 "$input_file")
     for i in "${!csv_lines[@]}"; do
-        IFS=',' read -r ligand_file receptor_file autobox_file <<< "${csv_lines[$i]}"
+        IFS=',' read -r receptor_file ligand_file autobox_file center_x center_y center_z size_x size_y size_z <<< "${csv_lines[$i]}"
         if [ -z "$ligand_file" ] || [ -z "$receptor_file" ] || [ -z "$autobox_file" ]; then
             echo "Error: Missing columns in CSV file at line $((i+2))"
             continue
         fi
         
-        ligand_file="ligands/${ligand_file%.*}.pdb"
+        ligand_file="ligands/${ligand_file}"
         receptor_file="proteins/$receptor_file"
-        autobox_file="sites/${autobox_file%.*}.pdb"
+        autobox_file="sites/${autobox_file}"
 
-        output_file="output/$(basename "$receptor_file" .pdb)_$(basename "$ligand_file" .pdb).sdf.gz"
+        # basename of ligandfile without sdf extension
+        receptor_file_basename="$(basename "$receptor_file" .sdf)"
+        ligand_file_basename="$(basename "$ligand_file" .sdf)"
+        autobox_file_basename="$(basename "$autobox_file" .sdf)"
+
+        output_file="output/$(basename "$receptor_file_basename" .pdb)_$(basename "$ligand_file_basename" .pdb).sdf.gz"
 
         # Start building the base command
         gnina_cmd="gnina -r $receptor_file -l $ligand_file"
@@ -49,7 +54,17 @@ gnina_docking() {
         if [ "$blind" -ne 0 ]; then
             gnina_cmd+=" --autobox_ligand $receptor_file"
         else
-            gnina_cmd+=" --autobox_ligand $autobox_file"
+            if [ -n "$autobox_file" ]; then
+                autobox_file="${autobox_file%.*}.pdb"
+                gnina_cmd+=" --autobox_ligand $autobox_file"
+            elif [ -n "$center_x" ] && [ -n "$center_y" ] && [ -n "$center_z" ] && 
+                 [ -n "$size_x" ] && [ -n "$size_y" ] && [ -n "$size_z" ]; then
+                gnina_cmd+=" --center_x $center_x --center_y $center_y --center_z $center_z"
+                gnina_cmd+=" --size_x $size_x --size_y $size_y --size_z $size_z"
+            else
+                echo "Error: Missing site or grid dimensions in CSV file at line $((i+2))"
+                continue
+            fi
         fi
 
         # # Add optional flags
@@ -72,7 +87,7 @@ plip_processing() {
     fi
 
     for folder in output/*/; do
-        for pdb_file in "$folder"combined_*.pdb; do
+        for pdb_file in "$folder"docked_*.pdb; do
             if [ -f "$pdb_file" ]; then
                 plip -f "$pdb_file" -x
                 

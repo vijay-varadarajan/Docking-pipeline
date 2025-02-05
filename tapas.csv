@@ -1,0 +1,11 @@
+Protein,Ligand,Site,center_x,center_y,center_z,box_size_x,box_size_y,box_size_z
+1m17_protein_clean.pdb,Arborinine.sdf,1m17_reference.pdb
+1m17_protein_clean.pdb,Citreorosein.sdf,1m17_reference.pdb
+3o96_protein_clean.pdb,Citreorosein.sdf,3o96_reference.pdb
+1u8f_protein_clean.pdb,Methyl_3_4_5_trimethoxycinnamate.sdf,1u8f_reference.pdb
+2az5_protein_clean.pdb,Methyl_3_4_5_trimethoxycinnamate.sdf,2az5_reference.pdb
+3ert_protein_clean.pdb,Methyl_3_4_5_trimethoxycinnamate.sdf,3ert_reference.pdb
+3ert_protein_clean.pdb,Scopolin.sdf,3ert_reference.pdb
+3o96_protein_clean.pdb,Scopolin.sdf,3o96_reference.pdb
+1m17_protein_clean.pdb,Quercetin.sdf,1m17_reference.pdb
+3o96_protein_clean.pdb,Quercetin.sdf,3o96_reference.pdb

@@ -34,15 +34,14 @@ def process_csv(csv_file, type="best"):
             reader = csv.reader(csvfile)
             next(reader)  # Skip header row
             for row in reader:
-                ligand_file, protein_file, site_file = row
+                protein_file, ligand_file, _ = row
                 ligand_base = os.path.splitext(ligand_file)[0]
                 protein_base = os.path.splitext(protein_file)[0]
-                site_base = os.path.splitext(site_file)[0]
                 
                 combined_name = f"{protein_base}_{ligand_base}_best.pdb"
                 gnina_ligand_pdb_path = f"output/{protein_base}_{ligand_base}_best/{combined_name}"
                 protein_pdb_path = f"proteins/{protein_file}"
-                output_pdb_path = f"output/{protein_base}_{ligand_base}_best/combined_{combined_name}"
+                output_pdb_path = f"output/{protein_base}_{ligand_base}_best/docked_{combined_name}"
                 
                 if os.path.exists(gnina_ligand_pdb_path) and os.path.exists(protein_pdb_path):
                     combine_protein_ligand(protein_pdb_path, gnina_ligand_pdb_path, output_pdb_path)
@@ -53,17 +52,16 @@ def process_csv(csv_file, type="best"):
             reader = csv.reader(csvfile)
             next(reader)
             for row in reader:
-                ligand_file, protein_file, site_file = row
+                protein_file, ligand_file, _ = row
                 ligand_base = os.path.splitext(ligand_file)[0]
                 protein_base = os.path.splitext(protein_file)[0]
-                site_base = os.path.splitext(site_file)[0]
                 
                 ligand_folder_path = f"output/{protein_base}_{ligand_base}/"
                 for file in os.listdir(ligand_folder_path):
                     if file.endswith(".pdb"):
                         ligand_pdb_path = os.path.join(ligand_folder_path, file)
                         protein_pdb_path = f"proteins/{protein_file}"
-                        output_pdb_path = f"output/{protein_base}_{ligand_base}/combined_{file}"
+                        output_pdb_path = f"output/{protein_base}_{ligand_base}/docked_{file}"
                         if os.path.exists(protein_pdb_path):
                             combine_protein_ligand(protein_pdb_path, ligand_pdb_path, output_pdb_path)
                         else:
@@ -128,7 +126,7 @@ def process_xml_files():
     csv_filename = f"output/excel_interaction_report.csv"
 
     # Custom order: First three categories, then the rest
-    first = ["ligand", "protein", "conformation", "affinity", "CNNscore", "hydrogen_bonds", "hydrophobic_interactions", "salt_bridges"]
+    first = ["protein", "ligand", "conformation", "affinity", "CNNscore", "hydrogen_bonds", "hydrophobic_interactions", "salt_bridges"]
     rest_categories = sorted(set(interactions_categories) - set(first))
     csv_headers = ["complex_name"] + first + rest_categories
 
@@ -138,7 +136,7 @@ def process_xml_files():
         writer.writerow(csv_headers)
         ind = 0
         for file_name, interaction_counts in data:
-            row = [str(os.path.basename(file_name)).removeprefix("report_").removesuffix(".xml"), ligands[ind], proteins[ind], conformations[ind], affinities[ind], CNNscores[ind]]
+            row = [str(os.path.basename(file_name)).removeprefix("report_").removesuffix(".xml"), proteins[ind], ligands[ind], conformations[ind], affinities[ind], CNNscores[ind]]
             for category in csv_headers[6:]:  # Skip 'complex_name'
                 row.append(interaction_counts.get(category, 0))
             writer.writerow(row)
@@ -250,7 +248,7 @@ def filter_docked(filter_type, input_file):
                 reader = csv.reader(f)
                 reader.__next__()
                 for row in reader:
-                    ligand_file, protein_file, _ = row
+                    protein_file, ligand_file, _ = row
                     ligand_base = os.path.splitext(ligand_file)[0]
                     protein_base = os.path.splitext(protein_file)[0]
                     
@@ -266,7 +264,7 @@ def filter_docked(filter_type, input_file):
                 reader = csv.reader(f)
                 reader.__next__()
                 for row in reader:
-                    ligand_file, protein_file, _ = row
+                    protein_file, ligand_file, _ = row
                     ligand_base = os.path.splitext(ligand_file)[0]
                     protein_base = os.path.splitext(protein_file)[0]
                     

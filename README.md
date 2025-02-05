@@ -91,3 +91,10 @@ https://github.com/Mys7erio/scientiflow-singularity/blob/main/install-singularit
 ## License
 
 This project is licensed under the MIT License.
+
+
+TODO: 
+- CSV file - protein then ligand
+- Output filename: docking_report.csv
+- Output file: protein-ligand-complex name-...
+- Output file and saved csv files: docked_... instead of combined_...

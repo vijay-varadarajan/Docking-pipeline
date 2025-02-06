@@ -69,6 +69,7 @@ gnina_docking() {
 
         # # Add optional flags
         [ -n "$exhaustiveness" ] && gnina_cmd+=" --exhaustiveness $exhaustiveness"
+        [ -n "$scoring" ] && gnina_cmd+=" --scoring $scoring"
         [ -n "$cnn_scoring" ] && gnina_cmd+=" --cnn_scoring $cnn_scoring"
         [ -n "$num_modes" ] && gnina_cmd+=" --num_modes $num_modes"
 

@@ -123,7 +123,7 @@ def process_xml_files():
         data.append((file_name, interaction_counts))
 
     # Prepare CSV file
-    csv_filename = f"output/excel_interaction_report.csv"
+    csv_filename = f"output/docking_report.csv"
 
     # Custom order: First three categories, then the rest
     first = ["protein", "ligand", "conformation", "affinity", "CNNscore", "hydrogen_bonds", "hydrophobic_interactions", "salt_bridges"]

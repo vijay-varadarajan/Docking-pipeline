@@ -29,12 +29,12 @@ To run the docking automation script, use the following command:
 2. `singularity exec containers/gnina-1.0.sif ./docking_process.sh gnina <docking_method> csv/pairs.csv`
 
 * **Docking**: Performs docking using the specified CNN scoring method using *GNINA*.
-      - `none`: No CNN scoring is used. *(fastest, traditional)*
-      - `rescore`: Rescoring using CNN. *(fastest with CNN)*
-      - `refinement`: Refinement using CNN. *(moderate speed. 10x slower than rescore)*
-      - `metrorescore`: Metropolis Monte Carlo sampling followed by rescoring using CNN.
-      - `metrorefine`: Metropolis Monte Carlo sampling followed by refinement using CNN.
-      - `all`: Ensemble of all CNN scoring methods are used. *(slowest, extremely computationally intensive)*
+  - `none`: No CNN scoring is used. *(fastest, traditional)*
+  - `rescore`: Rescoring using CNN. *(fastest with CNN)*
+  - `refinement`: Refinement using CNN. *(moderate speed. 10x slower than rescore)*
+  - `metrorescore`: Metropolis Monte Carlo sampling followed by rescoring using CNN.
+  - `metrorefine`: Metropolis Monte Carlo sampling followed by refinement using CNN.
+  - `all`: Ensemble of all CNN scoring methods are used. *(slowest, extremely computationally intensive)*
 
 3. `singularity exec containers/python-3.12.sif ./docking_process.sh unzip`
 
@@ -43,8 +43,8 @@ To run the docking automation script, use the following command:
 4. `singularity exec containers/python-3.12.sif python docking_process.py --mode filter --filter_type <filter_type>`
 
 * **Filtering**: Filters the docked results based on the specified filter type.
-      - `all`: Retains all docked poses.
-      - `best`: Retains the best docked pose based on the CNN score.
+  - `all`: Retains all docked poses.
+  - `best`: Retains the best docked pose based on the CNN score.
 
 5. `singularity exec containers/openbabel-3.1.0.sif ./docking_process.sh sdftopdb`
 
@@ -87,14 +87,3 @@ https://github.com/Mys7erio/scientiflow-singularity/blob/main/install-singularit
 `singularity pull containers/gnina-1.0.sif docker://gnina/gnina:latest`
 
 `singularity pull plip.sif library://scientiflow/bioinformatics/plip:1.0`
-
-## License
-
-This project is licensed under the MIT License.
-
-
-TODO: 
-- CSV file - protein then ligand
-- Output filename: docking_report.csv
-- Output file: protein-ligand-complex name-...
-- Output file and saved csv files: docked_... instead of combined_...
